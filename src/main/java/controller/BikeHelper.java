@@ -32,7 +32,7 @@ public class BikeHelper {
 		return allBikes;
 	}
 	
-	public void deleteTeam(Bike toDelete) {
+	public void deleteBike(Bike toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		TypedQuery<Bike> typedQuery = em.createQuery("select b from Bike b where b.bikeModel = :selectedBikeModel and b.bikeUse = :selectedBikeUse and b.bikePrice = :selectedBikePrice", Bike.class);
@@ -46,7 +46,7 @@ public class BikeHelper {
 		em.close();
 	}
 	
-	public Bike searchForTeamById(int idToEdit) {
+	public Bike searchForBikeById(int idToEdit) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		Bike foundTeam = em.find(Bike.class, idToEdit);
@@ -54,7 +54,7 @@ public class BikeHelper {
 		return foundTeam;
 	}
 	
-	public void updateTeam(Bike toEdit) {
+	public void updateBike(Bike toEdit) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.merge(toEdit);

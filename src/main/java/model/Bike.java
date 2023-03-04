@@ -18,7 +18,7 @@ public class Bike {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
-	private int bikeId;
+	private int id;
 	@Column(name="MODEL")
 	private String bikeModel;
 	@Column(name="SPECIALTY")
@@ -47,6 +47,14 @@ public class Bike {
 		this.bikePrice = bikePrice;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getBikeModel() {
 		return bikeModel;
 	}
@@ -73,8 +81,11 @@ public class Bike {
 
 	@Override
 	public String toString() {
-		return "Bike [bikeModel=" + bikeModel + ", bikeUse=" + bikeUse + ", bikePrice=" + bikePrice + "]";
+		return "Bike [id=" + id + ", bikeModel=" + bikeModel + ", bikeUse=" + bikeUse + ", bikePrice=" + bikePrice
+				+ "]";
 	}
+
+	
 	
 	
 
