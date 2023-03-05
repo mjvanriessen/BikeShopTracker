@@ -9,8 +9,8 @@
 <body>
 	<form method="post" action="navigationServlet">
 		<table>
+			<h2>Model | Specialty | Price</h2>
 			<c:forEach items="${requestScope.allBikes}" var="currentbike">
-			Model | Specialty | Price
 				<tr>
 					<td><input type="radio" name="id" value="${currentbike.id}"></td>
 					<td>${currentbike.bikeModel} |</td>
